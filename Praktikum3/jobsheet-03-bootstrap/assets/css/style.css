@@ -13,7 +13,7 @@ body {
 }
 
 a {
-    color: #1a6e38;
+    color: #1d5b8a;
     text-decoration: none;
 }
 
@@ -22,7 +22,7 @@ a:hover{
 }
 
 header {
-    background-color: #1a6e38;
+    background-color: #1d5b8a;
     color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -62,7 +62,7 @@ section {
 
 section h2 {
     margin-bottom: 1rem;
-    color: #1a6e38;
+    color: #1d5b8a;
 }
 
 /* ===== Kartu Statistik (CSS Grid) =====*/
@@ -88,7 +88,7 @@ main section:nth-of-type(2) article h3 {
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;;
-    color: #1a6e38;
+    color: #1d5b8a;
 }
 
 /* ===== Tabel ===== */
@@ -104,7 +104,7 @@ th, td {
 }
 
 thead {
-    background-color: #1a6e38;
+    background-color: #1d5b8a;
     color: #fff;
 }
 
@@ -163,7 +163,7 @@ form select {
 }
 
 form button[type="submit"] {
-    background-color: #1a6e38;
+    background-color: #1d5b8a;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -182,4 +182,80 @@ footer {
     padding: 1.25rem;
     color: #7a8794;
     font-size: 0.9rem;
+}
+
+/* ===== Hamburger Menu (checkbox hack) ===== */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Mobile */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
+}
+
+/* Tablet ke bawah */
+@media (min-width: 768px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .nav-toggle-label {
+        display: none; /* Sembunyikan hamburger di desktop */
+    }
+    header nav {
+        display: block; /* Munculkan menu sejajar */
+    }
+}
+
+@media (min-width: 1400px){
+    main {max-width: 1200px;}
+}
+
+/* ===== Tabel Responsif ===== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.pre-responsive {
+    overflow-x: auto;
 }
