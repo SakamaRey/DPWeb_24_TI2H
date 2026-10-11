@@ -7,6 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
+    $_SESSION['flash'] = ['type' => 'error', 'pesan' => 'Akses ditolak! Hanya Admin yang berhak menghapus data anggota.'];
+    header('Location: list.php');
+    exit;
+}
+
 $id = $_POST['id'] ?? null;
 if ($id) {
     $stmt = $pdo->prepare("DELETE FROM anggota WHERE id = :id");

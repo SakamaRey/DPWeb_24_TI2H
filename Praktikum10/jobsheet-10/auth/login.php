@@ -33,6 +33,9 @@ unset($_SESSION['flash']);
                     <button type="submit">Masuk</button>
                 </p>
             </form>
+            <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                <input type="checkbox" name="remember"> Ingat Saya (30 Hari)
+            </label>
             <p>Belum punya akun? <a href="register.php">Daftar di sini</a></p>
         </section>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
